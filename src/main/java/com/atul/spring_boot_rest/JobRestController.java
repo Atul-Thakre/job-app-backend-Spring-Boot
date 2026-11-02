@@ -51,4 +51,10 @@ public class JobRestController{
         ser.loadData();
         return "success";
     }
+
+    //Search job post by keyword
+    @GetMapping("jobPost/Keyword/{Keyword}")
+    public List<JobPost>searchByKeyword(@PathVariable("Keyword") String Keyword){
+         return ser.search(Keyword);
+    }
 }
